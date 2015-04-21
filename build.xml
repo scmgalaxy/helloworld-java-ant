@@ -1,0 +1,39 @@
+<project name="myfirst" basedir="." default="package">
+
+<property name="src" value="C:\Users\1019352\Desktop\ant\src111" />
+
+<target name="clean">
+	<echo message="We are in cleaning target........."/>
+	<delete file="src/HelloWorld.java"/>
+	<delete file="bin/HelloWorld.class"/>
+	<delete dir="src"/>
+	<delete dir="bin"/>
+</target>
+
+<target name="create" depends="clean">
+	<echo message="We are in creating target........."/>
+	<mkdir dir="src"/>
+	<mkdir dir="bin"/>
+</target>
+
+<target name="copy" depends="create">
+	<echo message="We are in copy target........."/>
+	<copy file="D:\code\HelloWorld.java" tofile="src\HelloWorld.java"/>
+</target>
+
+<target name="compile" depends="copy">
+	<echo message="Before Compile"/>
+	<javac srcdir="src" destdir="bin" />
+	<echo message="Post Compile"/>
+</target>
+
+<target name="package" depends="compile">
+	<echo message="We are in package target........."/>
+	<mkdir dir="lib"/>
+	<jar destfile="lib/app.jar" basedir="bin"/>
+</target>
+
+</project>
+
+
+
