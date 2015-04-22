@@ -17,7 +17,7 @@
 
 <target name="compile" depends="create">
 	<echo message="Before Compile"/>
-	<javac srcdir="src" destdir="bin" />
+	<javac includeantruntime="false" srcdir="src" destdir="bin" />
 	<echo message="Post Compile"/>
 </target>
 
