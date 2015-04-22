@@ -14,12 +14,8 @@
 	<mkdir dir="bin"/>
 </target>
 
-<target name="copy" depends="create">
-	<echo message="We are in copy target........."/>
-	<copy file="D:\code\HelloWorld.java" tofile="src\HelloWorld.java"/>
-</target>
 
-<target name="compile" depends="copy">
+<target name="compile" depends="create">
 	<echo message="Before Compile"/>
 	<javac srcdir="src" destdir="bin" />
 	<echo message="Post Compile"/>
