@@ -4,9 +4,7 @@
 
 <target name="clean">
 	<echo message="We are in cleaning target........."/>
-	<delete file="src/HelloWorld.java"/>
 	<delete file="bin/HelloWorld.class"/>
-	<delete dir="src"/>
 	<delete dir="bin"/>
 </target>
 
