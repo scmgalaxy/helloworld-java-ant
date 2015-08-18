@@ -1,4 +1,4 @@
-<project name="myfirst" basedir="." default="package">
+<project name="myfirst1" basedir="." default="package">
 
 <property name="src" value="C:\Users\1019352\Desktop\ant\src111" />
 
