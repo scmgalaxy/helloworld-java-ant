@@ -1,11 +1,12 @@
 <project name="myfirst1" basedir="." default="package">
 
-<property name="src" value="C:\Users\1019352\Desktop\ant\src111" />
+<property name="src" value="src" />
 
 <target name="clean">
 	<echo message="We are in cleaning target........."/>
 	<delete file="bin/HelloWorld.class"/>
 	<delete dir="bin"/>
+	<delete dir="lib"/>
 </target>
 
 <target name="create" depends="clean">
