@@ -12,7 +12,11 @@ node {
     writeFile file: "output/uselessfile.md", text: "This file is useless, no need to archive it."
 
     stage "build output"
-        
+
+    def antVersion = 'Ant1.9.1'
+    withEnv( ["ANT_HOME=${tool antVersion}"] ) {
+        sh '$ANT_HOME/bin/ant build.xml'
+    }
     // Archive the build output artifacts.
     archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
 
