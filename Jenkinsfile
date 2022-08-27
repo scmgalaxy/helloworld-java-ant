@@ -1,9 +1,5 @@
 #!groovy
 node {
-    tools {
-        jdk 'java9'
-        maven 'Maven3.5'
-    }
     stage ("Create build output") {
             // Make the output directory.
         sh "mkdir -p output"
