@@ -24,7 +24,6 @@ node {
         //                            having to crawl the workspace files to see the cause).
         sh "mvn --batch-mode -V -U -e clean deploy -Dsurefire.useFile=false"
 
-        
         // }   
         // Archive the build output artifacts.
         archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
