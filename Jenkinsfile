@@ -13,7 +13,7 @@ node {
     }
 
     stage ("build output") {
-        withEnv() {
+        // withEnv(["JAVA_HOME=${ tool 'jdk-1.8.0_64bits' }", "PATH+MAVEN=${tool 'maven-3.2.1'}/bin:${env.JAVA_HOME}/bin"]) {
 
         // Apache Maven related side notes:
         // --batch-mode : recommended in CI to inform maven to not run in interactive mode (less logs)
@@ -24,7 +24,7 @@ node {
         //                            having to crawl the workspace files to see the cause).
         sh "mvn --batch-mode -V -U -e clean deploy -Dsurefire.useFile=false"
 
-        }   
+        // }   
         // Archive the build output artifacts.
         archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
 
