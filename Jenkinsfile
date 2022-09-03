@@ -14,7 +14,6 @@ node {
 
     stage ("build output") {
         // withEnv(["JAVA_HOME=${ tool 'jdk-1.8.0_64bits' }", "PATH+MAVEN=${tool 'maven-3.2.1'}/bin:${env.JAVA_HOME}/bin"]) {
-
         // Apache Maven related side notes:
         // --batch-mode : recommended in CI to inform maven to not run in interactive mode (less logs)
         // -V : strongly recommended in CI, will display the JDK and Maven versions in use.
