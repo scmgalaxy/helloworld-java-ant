@@ -12,9 +12,9 @@ pipeline {
       }
     }
 
-    stage('Github Jenkins Ant Build') {
+    stage('Build Ant ') {
       steps {
-        git(url: 'https://github.com/Devops-self-training/jenkins_series-helloworld-java-ant', branch: 'jenkins-ci', changelog: true, credentialsId: 'coursera_lab')
+        sh 'ant clean compile test package war'
       }
     }
 
