@@ -6,9 +6,15 @@ pipeline {
 
   }
   stages {
-    stage('') {
+    stage('Log Ant version info') {
       steps {
-        withAnt()
+        sh 'ant -version'
+      }
+    }
+
+    stage('Github Jenkins Ant Build') {
+      steps {
+        git(url: 'https://github.com/Devops-self-training/jenkins_series-helloworld-java-ant', branch: 'jenkins-ci', changelog: true, credentialsId: 'coursera_lab')
       }
     }
 
