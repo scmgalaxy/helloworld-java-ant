@@ -14,7 +14,7 @@ pipeline {
 
     stage('Build Ant ') {
       steps {
-        sh 'ant clean compile test package war'
+        sh 'ant clean compile build package war'
       }
     }
 
