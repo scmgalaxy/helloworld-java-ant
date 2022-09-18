@@ -14,7 +14,7 @@ pipeline {
 
     stage('Build Ant ') {
       steps {
-        sh 'ant -d build'
+        sh 'ant -d compile'
       }
     }
 
